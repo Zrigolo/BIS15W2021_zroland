@@ -10,7 +10,7 @@ I am a 4th year NPB major hoping to become proficient in data organization and v
 
 ## Contact Info
 
-[Email](zroland@ucdavis.edu)
+[Email](mailto:zroland@ucdavis.edu) 
 
 
 # Thanks 😄
