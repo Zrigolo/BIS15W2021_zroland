@@ -61,17 +61,20 @@ We get an error here because `else` is a function in R. You also don't want to g
 ## Practice
 1. Create three new objects, `venom_GT`, `chiron`, and `veyron`. These are the fastest cars in the world. Assign each car to its top speed. The venom_GT can go 270, chiron is 261, and veyron is 268.
 ```{r}
-
+venom_GT <- 270
+chiron <- 261
+veyron <- 268
 ```
 
 2. Use arithmetic to calculate the mean top speed for the cars.
 ```{r}
-
+(270+261+268)/3
 ```
 
 3. Use the function `mean()` to calculate the mean top speed for the cars.
 ```{r}
-
+cars<- c(chiron, veyron, venom_GT)
+mean(cars)
 ```
 
 ## Types of Data
@@ -131,7 +134,7 @@ mean(new_vector)
 ```
 
 3. How do you interpret this result? What does this mean about NAs?  
-
+They are being included in the calculation of the mean.
 4. Recalculate the mean using the following code chunk. Why is the useful?  
 ```{r}
 mean(new_vector, na.rm=T) #na.rm removes the NA values in the vector
