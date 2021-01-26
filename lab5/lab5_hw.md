@@ -1,7 +1,7 @@
 ---
 title: "Lab 5 Homework"
 author: "Zabrisky Roland"
-date: "2021-01-20"
+date: "2021-01-26"
 output:
   html_document: 
     theme: spacelab
@@ -31,7 +31,8 @@ superhero_info <- readr::read_csv("data/heroes_information.csv", na = c("", "-99
 ```
 
 ```
-## Parsed with column specification:
+## 
+## -- Column specification --------------------------------------------------------
 ## cols(
 ##   name = col_character(),
 ##   Gender = col_character(),
@@ -51,15 +52,13 @@ superhero_powers <- readr::read_csv("data/super_hero_powers.csv", na = c("", "-9
 ```
 
 ```
-## Parsed with column specification:
+## 
+## -- Column specification --------------------------------------------------------
 ## cols(
 ##   .default = col_logical(),
 ##   hero_names = col_character()
 ## )
-```
-
-```
-## See spec(...) for full column specifications.
+## i Use `spec()` for the full column specifications.
 ```
 
 ## Data tidy
@@ -126,10 +125,6 @@ The [janitor](https://garthtarr.github.io/meatR/janitor.html) package is your fr
 
 ```r
 library("janitor")
-```
-
-```
-## Warning: package 'janitor' was built under R version 4.0.3
 ```
 
 ```
