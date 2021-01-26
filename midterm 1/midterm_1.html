@@ -574,6 +574,7 @@ defauntation$LandUse &lt;- as.factor(defauntation$LandUse)</code></pre>
 ## 1 High             1.74       1.66
 ## 2 Moderate         1.68       1.62</code></pre>
 <p><strong>11. (4 points) One of the conclusions in the study is that the relative abundance of animals drops off the closer you get to a village. Let’s try to reconstruct this (without the statistics). How does the relative abundance (RA) of apes, birds, elephants, monkeys, rodents, and ungulates compare between sites that are less than 5km from a village to sites that are greater than 20km from a village? The variable <code>Distance</code> measures the distance of the transect from the nearest village. Hint: try using the <code>across</code> operator.</strong></p>
+<p><em>Birds and rodents are found closer to villages on average, while monkeys, apes, elephants, and ungulates are more abundant further away from villages.</em></p>
 <pre class="r"><code>defauntation %&gt;% 
   filter(Distance&gt;20 | Distance&lt;5) %&gt;% 
   group_by(Distance&gt;20, Distance&lt;5) %&gt;% 
