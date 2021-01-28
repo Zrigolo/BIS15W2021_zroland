@@ -1,7 +1,7 @@
 ---
 title: "Lab 6 Homework"
 author: "Zabrisky Roland"
-date: "2021-01-24"
+date: "2021-01-27"
 output:
   html_document: 
     theme: spacelab
@@ -33,16 +33,14 @@ fisheries<- readr::read_csv("data/FAO_1950to2012_111914.csv")
 ```
 
 ```
-## Parsed with column specification:
+## 
+## -- Column specification --------------------------------------------------------
 ## cols(
 ##   .default = col_character(),
 ##   `ISSCAAP group#` = col_double(),
 ##   `FAO major fishing area` = col_double()
 ## )
-```
-
-```
-## See spec(...) for full column specifications.
+## i Use `spec()` for the full column specifications.
 ```
 
 1. Do an exploratory analysis of the data (your choice). What are the names of the variables, what are the dimensions, are there any NA's, what are the classes of the variables?  
@@ -347,10 +345,6 @@ fisheries_tidy %>%
 ```
 
 ```
-## `summarise()` ungrouping output (override with `.groups` argument)
-```
-
-```
 ## # A tibble: 187 x 2
 ##    country                  largest_catch
 ##    <fct>                            <dbl>
@@ -377,27 +371,17 @@ fisheries_tidy %>%
 ```
 
 ```
-## Warning in max(catch, na.rm = T): no non-missing arguments to max; returning -
-## Inf
+## Warning in max(catch, na.rm = T): max 中沒有無漏失的引數；回傳 -Inf
 
-## Warning in max(catch, na.rm = T): no non-missing arguments to max; returning -
-## Inf
+## Warning in max(catch, na.rm = T): max 中沒有無漏失的引數；回傳 -Inf
 
-## Warning in max(catch, na.rm = T): no non-missing arguments to max; returning -
-## Inf
+## Warning in max(catch, na.rm = T): max 中沒有無漏失的引數；回傳 -Inf
 
-## Warning in max(catch, na.rm = T): no non-missing arguments to max; returning -
-## Inf
+## Warning in max(catch, na.rm = T): max 中沒有無漏失的引數；回傳 -Inf
 
-## Warning in max(catch, na.rm = T): no non-missing arguments to max; returning -
-## Inf
+## Warning in max(catch, na.rm = T): max 中沒有無漏失的引數；回傳 -Inf
 
-## Warning in max(catch, na.rm = T): no non-missing arguments to max; returning -
-## Inf
-```
-
-```
-## `summarise()` ungrouping output (override with `.groups` argument)
+## Warning in max(catch, na.rm = T): max 中沒有無漏失的引數；回傳 -Inf
 ```
 
 ```
@@ -445,10 +429,6 @@ fisheries_tidy %>%
 ```
 
 ```
-## `summarise()` ungrouping output (override with `.groups` argument)
-```
-
-```
 ## # A tibble: 37 x 2
 ##    country               sardine_total
 ##    <fct>                         <dbl>
@@ -476,10 +456,6 @@ fisheries_tidy%>%
   filter(catch != "NA")%>%
   summarize(ceph_total=sum(catch))%>%
   arrange(desc(ceph_total))
-```
-
-```
-## `summarise()` ungrouping output (override with `.groups` argument)
 ```
 
 ```
@@ -512,10 +488,6 @@ fisheries_tidy %>%
 ```
 
 ```
-## `summarise()` ungrouping output (override with `.groups` argument)
-```
-
-```
 ## # A tibble: 1,353 x 2
 ##    asfis_species_name    catch_total
 ##    <chr>                       <dbl>
@@ -541,10 +513,6 @@ fisheries_tidy%>%
   filter(catch != "NA")%>%
   summarise(mean_catch=mean(catch))%>%
   arrange(desc(mean_catch))
-```
-
-```
-## `summarise()` ungrouping output (override with `.groups` argument)
 ```
 
 ```
