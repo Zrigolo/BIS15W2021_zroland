@@ -11,7 +11,7 @@
 
 <meta name="author" content="Zabrisky Roland" />
 
-<meta name="date" content="2021-01-31" />
+<meta name="date" content="2021-02-03" />
 
 <title>Lab 7 Homework</title>
 
@@ -191,7 +191,7 @@ summary {
 
 <h1 class="title toc-ignore">Lab 7 Homework</h1>
 <h4 class="author">Zabrisky Roland</h4>
-<h4 class="date">2021-01-31</h4>
+<h4 class="date">2021-02-03</h4>
 
 </div>
 
@@ -213,7 +213,8 @@ library(skimr)</code></pre>
 <p><code>amniota</code> data:<br />
 Myhrvold N, Baldridge E, Chan B, Sivam D, Freeman DL, Ernest SKM (2015). “An amniote life-history database to perform comparative analyses with birds, mammals, and reptiles.” <em>Ecology</em>, <em>96</em>, 3109. doi: 10.1890/15-0846.1 (URL: <a href="https://doi.org/10.1890/15-0846.1" class="uri">https://doi.org/10.1890/15-0846.1</a>).</p>
 <pre class="r"><code>amniota &lt;- readr::read_csv(&quot;data/amniota.csv&quot;)</code></pre>
-<pre><code>## Parsed with column specification:
+<pre><code>## 
+## -- Column specification --------------------------------------------------------
 ## cols(
 ##   .default = col_double(),
 ##   class = col_character(),
@@ -222,12 +223,13 @@ Myhrvold N, Baldridge E, Chan B, Sivam D, Freeman DL, Ernest SKM (2015). “An a
 ##   genus = col_character(),
 ##   species = col_character(),
 ##   common_name = col_character()
-## )</code></pre>
-<pre><code>## See spec(...) for full column specifications.</code></pre>
+## )
+## i Use `spec()` for the full column specifications.</code></pre>
 <p><code>amphibio</code> data:<br />
 Oliveira BF, São-Pedro VA, Santos-Barrera G, Penone C, Costa GC (2017). “AmphiBIO, a global database for amphibian ecological traits.” <em>Scientific Data</em>, <em>4</em>, 170123. doi: 10.1038/sdata.2017.123 (URL: <a href="https://doi.org/10.1038/sdata.2017.123" class="uri">https://doi.org/10.1038/sdata.2017.123</a>).</p>
 <pre class="r"><code>amphibio &lt;- readr::read_csv(&quot;data/amphibio.csv&quot;)</code></pre>
-<pre><code>## Parsed with column specification:
+<pre><code>## 
+## -- Column specification --------------------------------------------------------
 ## cols(
 ##   .default = col_double(),
 ##   id = col_character(),
@@ -237,8 +239,8 @@ Oliveira BF, São-Pedro VA, Santos-Barrera G, Penone C, Costa GC (2017). “Amph
 ##   Species = col_character(),
 ##   Seeds = col_logical(),
 ##   OBS = col_logical()
-## )</code></pre>
-<pre><code>## See spec(...) for full column specifications.</code></pre>
+## )
+## i Use `spec()` for the full column specifications.</code></pre>
 <pre><code>## Warning: 125 parsing failures.
 ##  row col           expected                                                           actual                file
 ## 1410 OBS 1/0/T/F/TRUE/FALSE Identified as P. appendiculata in Boquimpani-Freitas et al. 2002 &#39;data/amphibio.csv&#39;
@@ -375,19 +377,19 @@ Oliveira BF, São-Pedro VA, Santos-Barrera G, Penone C, Costa GC (2017). “Amph
 </tbody>
 </table>
 <p><strong>Variable type: numeric</strong></p>
-<table>
+<table style="width:100%;">
 <colgroup>
-<col width="22%" />
-<col width="5%" />
-<col width="8%" />
-<col width="5%" />
-<col width="6%" />
-<col width="5%" />
-<col width="4%" />
-<col width="4%" />
-<col width="4%" />
+<col width="28%" />
 <col width="7%" />
-<col width="24%" />
+<col width="10%" />
+<col width="6%" />
+<col width="8%" />
+<col width="7%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="9%" />
+<col width="4%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -1564,7 +1566,8 @@ sum(NA_amphibio)</code></pre>
 <p><strong>10. Now that we know how NA’s are represented in the <code>amniota</code> data, how would you load the data such that the values which represent NA’s are automatically converted?</strong></p>
 <p><em>It seems like some of the variables were converted from numeric to logical in the process but otherwise it worked?</em></p>
 <pre class="r"><code>amniota_improved&lt;-readr::read_csv(file=&quot;data/amniota.csv&quot;,na=c(&quot;-999&quot;,&quot;-30258.711&quot;))</code></pre>
-<pre><code>## Parsed with column specification:
+<pre><code>## 
+## -- Column specification --------------------------------------------------------
 ## cols(
 ##   .default = col_double(),
 ##   class = col_character(),
@@ -1583,8 +1586,8 @@ sum(NA_amphibio)</code></pre>
 ##   female_svl_at_maturity_cm = col_logical(),
 ##   female_body_mass_at_maturity_g = col_logical(),
 ##   no_sex_svl_cm = col_logical()
-## )</code></pre>
-<pre><code>## See spec(...) for full column specifications.</code></pre>
+## )
+## i Use `spec()` for the full column specifications.</code></pre>
 <pre><code>## Warning: 13577 parsing failures.
 ##  row                      col           expected actual               file
 ## 9803 birth_or_hatching_svl_cm 1/0/T/F/TRUE/FALSE    4.7 &#39;data/amniota.csv&#39;
@@ -1805,17 +1808,17 @@ sum(NA_amphibio)</code></pre>
 <p><strong>Variable type: numeric</strong></p>
 <table>
 <colgroup>
-<col width="23%" />
-<col width="6%" />
+<col width="29%" />
+<col width="7%" />
+<col width="10%" />
+<col width="7%" />
 <col width="8%" />
+<col width="4%" />
+<col width="5%" />
 <col width="5%" />
 <col width="6%" />
-<col width="3%" />
+<col width="9%" />
 <col width="4%" />
-<col width="4%" />
-<col width="4%" />
-<col width="7%" />
-<col width="25%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -2218,17 +2221,17 @@ sum(NA_amphibio)</code></pre>
 <p><strong>Variable type: numeric</strong></p>
 <table>
 <colgroup>
-<col width="22%" />
-<col width="5%" />
-<col width="8%" />
-<col width="5%" />
+<col width="28%" />
+<col width="7%" />
+<col width="10%" />
 <col width="6%" />
-<col width="3%" />
+<col width="8%" />
 <col width="4%" />
 <col width="5%" />
-<col width="5%" />
+<col width="6%" />
 <col width="7%" />
-<col width="24%" />
+<col width="9%" />
+<col width="4%" />
 </colgroup>
 <thead>
 <tr class="header">
