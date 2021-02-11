@@ -90,6 +90,7 @@ sydneybeaches_long
 ```{r}
 sydneybeaches_long_V2 <-sydneybeaches_long %>% 
   separate(date, into = c("day", "month", "year"), sep = "/")
+sydneybeaches_long_V2
 ```
 
 

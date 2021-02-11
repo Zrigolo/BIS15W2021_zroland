@@ -30,8 +30,7 @@ library("skimr")
 ## Questions
 **1. (2 points) Briefly explain how R, RStudio, and GitHub work together to make work flows in data science transparent and repeatable. What is the advantage of using RMarkdown in this context?**  
 
-_R is a script language and R studio is a GUI that improves user interaction with R. Git hub is version control software that tracks the history of the code uploaded. All changes made to a repository are tracked making the code transparent. RMarkdown is a clean formatted document that is accessible to all and allows for the viewer to easily interpret the code. The tracking and availability of the code using this combination is what makes work flows in data science transparent and repeatable._
-
+_R is a scripting language and R studio is a GUI that improves user interaction with R. Git hub is version control software that tracks the history of the code uploaded. All changes made to a repository are tracked making the code transparent. RMarkdown is a clean formatted document that is accessible to all and allows for the viewer to easily interpret the code. The tracking and availability of the code using this combination is what makes work flows in data science transparent and repeatable._
 
 **2. (2 points) What are the three types of `data structures` that we have discussed? Why are we using data frames for BIS 15L?**
 
@@ -43,20 +42,20 @@ In the midterm 1 folder there is a second folder called `data`. Inside the `data
 ```{r}
 elephants <- readr::read_csv("data/ElephantsMF.csv")
 ```
+
 ```{r}
 glimpse(elephants)
 ```
+
 ```{r}
 str(elephants)
 ```
-
-
-
 
 **4. (2 points) Change the names of the variables to lower case and change the class of the variable `sex` to a factor.**
 ```{r}
 elephants<- rename(elephants, age="Age", height="Height", sex= "Sex")
 ```
+
 ```{r}
 names(elephants)
 ```
@@ -65,11 +64,7 @@ elephants$sex <- as.factor(elephants$sex)
 class(elephants$sex)
 ```
 
-
-
-
-
-**5. (2 points) How many male and female elephants are represented in the data?**\
+**5. (2 points) How many male and female elephants are represented in the data?**
 
 _There are 150 females and 138 males represented in the data._
 ```{r}
@@ -91,7 +86,6 @@ elephants %>%
   summarise(average_age= mean(age))
 ```
 
-
 **7. (2 points) How does the average age and height of elephants compare by sex?**
 _The average age and height is higher in female elephants._
 ```{r}
@@ -111,13 +105,11 @@ elephants %>%
   summarise(compare_age= mean(age), compare_height= mean(height), min_height= min(height), max_height= max(height), n=n())
 ```
 
-
 For the next series of questions, we will use data from a study on vertebrate community composition and impacts from defaunation in [Gabon, Africa](https://en.wikipedia.org/wiki/Gabon). One thing to notice is that the data include 24 separate transects. Each transect represents a path through different forest management areas.  
 
 Reference: Koerner SE, Poulsen JR, Blanchard EJ, Okouyi J, Clark CJ. Vertebrate community composition and diversity declines along a defaunation gradient radiating from rural villages in Gabon. _Journal of Applied Ecology_. 2016. This paper, along with a description of the variables is included inside the midterm 1 folder.  
 
 **9. (2 points) Load `IvindoData_DryadVersion.csv` and use the function(s) of your choice to get an idea of the overall structure. Change the variables `HuntCat` and `LandUse` to factors.**
-
 ```{r}
 defauntation <- readr::read_csv("data/IvindoData_DryadVersion.csv")
 ```
@@ -131,6 +123,7 @@ names(defauntation)
 defauntation$HuntCat <- as.factor(defauntation$HuntCat)
 defauntation$LandUse <- as.factor(defauntation$LandUse)
 ```
+
 ```{r}
 class(defauntation$HuntCat)
 class(defauntation$LandUse)
@@ -147,7 +140,6 @@ defauntation %>%
   summarise(mammal_D_avg= mean(Diversity_MammalSpecies), bird_D_avg= mean(Diversity_BirdSpecies))
 ```
 
-
 **11. (4 points) One of the conclusions in the study is that the relative abundance of animals drops off the closer you get to a village. Let's try to reconstruct this (without the statistics). How does the relative abundance (RA) of apes, birds, elephants, monkeys, rodents, and ungulates compare between sites that are less than 5km from a village to sites that are greater than 20km from a village? The variable `Distance` measures the distance of the transect from the nearest village. Hint: try using the `across` operator.**  
 
 _Birds and rodents are found closer to villages on average, while monkeys, apes, elephants, and ungulates are more abundant further away from villages._
@@ -157,7 +149,6 @@ defauntation %>%
   group_by(Distance>20, Distance<5) %>% 
   summarise(across(contains("RA"), mean, na.rm=T))
 ```
-
 
 **12. (4 points) Based on your interest, do one exploratory analysis on the `gabon` data of your choice. This analysis needs to include a minimum of two functions in `dplyr.`**
 
@@ -169,3 +160,4 @@ defauntation %>%
   arrange(desc(RA_Apes))
 ```
 
+_Nicely done Zabrinsky! I see no errors and just a few minor formatting changes. My only suggestion is to keep each code chunk separate. It will knit up nicer that way._
