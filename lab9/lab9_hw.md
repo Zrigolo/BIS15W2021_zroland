@@ -1,7 +1,7 @@
 ---
 title: "Lab 9 Homework"
 author: "Zabrisky Roland"
-date: "2021-02-08"
+date: "2021-02-14"
 output:
   html_document: 
     theme: spacelab
@@ -31,7 +31,8 @@ colleges<- readr::read_csv("data/ca_college_data.csv")
 ```
 
 ```
-## Parsed with column specification:
+## 
+## -- Column specification --------------------------------------------------------
 ## cols(
 ##   INSTNM = col_character(),
 ##   CITY = col_character(),
@@ -187,10 +188,6 @@ colleges_clean %>%
   group_by(city) %>% 
   summarise(max_cost= mean(costt4_a, na.rm=T)) %>% 
   arrange(desc(max_cost))
-```
-
-```
-## `summarise()` ungrouping output (override with `.groups` argument)
 ```
 
 ```

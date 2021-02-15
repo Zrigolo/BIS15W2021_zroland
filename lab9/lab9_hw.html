@@ -11,7 +11,7 @@
 
 <meta name="author" content="Zabrisky Roland" />
 
-<meta name="date" content="2021-02-08" />
+<meta name="date" content="2021-02-14" />
 
 <title>Lab 9 Homework</title>
 
@@ -191,7 +191,7 @@ summary {
 
 <h1 class="title toc-ignore">Lab 9 Homework</h1>
 <h4 class="author">Zabrisky Roland</h4>
-<h4 class="date">2021-02-08</h4>
+<h4 class="date">2021-02-14</h4>
 
 </div>
 
@@ -209,7 +209,8 @@ library(here)
 library(naniar)</code></pre>
 <p>For this homework, we will take a departure from biological data and use data about California colleges. These data are a subset of the national college scorecard (<a href="https://collegescorecard.ed.gov/data/" class="uri">https://collegescorecard.ed.gov/data/</a>). Load the <code>ca_college_data.csv</code> as a new object called <code>colleges</code>.</p>
 <pre class="r"><code>colleges&lt;- readr::read_csv(&quot;data/ca_college_data.csv&quot;)</code></pre>
-<pre><code>## Parsed with column specification:
+<pre><code>## 
+## -- Column specification --------------------------------------------------------
 ## cols(
 ##   INSTNM = col_character(),
 ##   CITY = col_character(),
@@ -325,7 +326,6 @@ colleges_clean</code></pre>
   group_by(city) %&gt;% 
   summarise(max_cost= mean(costt4_a, na.rm=T)) %&gt;% 
   arrange(desc(max_cost))</code></pre>
-<pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
 <pre><code>## # A tibble: 161 x 2
 ##    city                max_cost
 ##    &lt;chr&gt;                  &lt;dbl&gt;
