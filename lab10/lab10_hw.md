@@ -1,7 +1,7 @@
 ---
 title: "Lab 10 Homework"
 author: "Zabrisky Roland"
-date: "2021-02-11"
+date: "2021-02-15"
 output:
   html_document: 
     theme: spacelab
@@ -32,7 +32,8 @@ deserts <- read_csv(here("lab10", "data", "surveys_complete.csv"))
 ```
 
 ```
-## Parsed with column specification:
+## 
+## -- Column specification --------------------------------------------------------
 ## cols(
 ##   record_id = col_double(),
 ##   month = col_double(),
@@ -148,13 +149,9 @@ deserts %>%
 ```
 
 ```
-## `summarise()` ungrouping output (override with `.groups` argument)
-```
-
-```
 ## # A tibble: 26 x 2
 ##    genus            genus_total
-##    <chr>                  <int>
+##  * <chr>                  <int>
 ##  1 Ammodramus                 2
 ##  2 Ammospermophilus         437
 ##  3 Amphispiza               303
@@ -173,10 +170,6 @@ deserts %>%
   group_by(species) %>% 
   summarise(species_total= n()) %>% 
   arrange(desc(species_total))
-```
-
-```
-## `summarise()` ungrouping output (override with `.groups` argument)
 ```
 
 ```
@@ -255,6 +248,10 @@ deserts%>%
 
 ![](lab10_hw_files/figure-html/unnamed-chunk-12-1.png)<!-- -->
 
+<style>
+div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px;}
+</style>
+<div class = "blue">
 
 6. Add another layer to your answer from #4 using `geom_point` to get an idea of how many measurements were taken for each species.
 
@@ -270,16 +267,16 @@ deserts%>%
 ## # Groups:   species [22]
 ##    species     `n_distinct(record_id)`     n
 ##    <chr>                         <int> <int>
-##  1 albigula                       1152  1152
-##  2 baileyi                        2810  2810
-##  3 eremicus                       1260  1260
-##  4 flavus                         1548  1548
-##  5 fulvescens                       75    75
-##  6 fulviventer                      41    41
-##  7 hispidus                        172   172
-##  8 intermedius                       8     8
-##  9 leucogaster                     970   970
-## 10 leucopus                         36    36
+##  1 albigula                      32283  1152
+##  2 baileyi                       32283  2810
+##  3 eremicus                      32283  1260
+##  4 flavus                        32283  1548
+##  5 fulvescens                    32283    75
+##  6 fulviventer                   32283    41
+##  7 hispidus                      32283   172
+##  8 intermedius                   32283     8
+##  9 leucogaster                   32283   970
+## 10 leucopus                      32283    36
 ## # ... with 12 more rows
 ```
 
@@ -296,6 +293,7 @@ labs(title = "Weight Measurements per Species",x="Species",y="Number of Weight M
 
 ![](lab10_hw_files/figure-html/unnamed-chunk-14-1.png)<!-- -->
 
+</div>
 
 
 7. [Dipodomys merriami](https://en.wikipedia.org/wiki/Merriam's_kangaroo_rat) is the most frequently sampled animal in the study. How have the number of observations of this species changed over the years included in the study?
@@ -341,10 +339,6 @@ deserts%>%
   group_by(species)%>%
   summarise(avg_weight=mean(weight,na.rm=T))%>%
   arrange(desc(avg_weight))
-```
-
-```
-## `summarise()` ungrouping output (override with `.groups` argument)
 ```
 
 ```
@@ -423,7 +417,7 @@ deserts%>%
 ```
 
 ```
-## `summarise()` regrouping output by 'plot_type' (override with `.groups` argument)
+## `summarise()` has grouped output by 'plot_type'. You can override using the `.groups` argument.
 ```
 
 ![](lab10_hw_files/figure-html/unnamed-chunk-21-1.png)<!-- -->
