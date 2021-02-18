@@ -1,7 +1,7 @@
 ---
 title: "Lab 11 Homework"
 author: "Zabrisky Roland"
-date: "2021-02-16"
+date: "2021-02-18"
 output:
   html_document: 
     theme: spacelab
@@ -140,10 +140,6 @@ gapminder2<- gapminder %>%
   summarise(mean_life_expectancy=mean(lifeExp)) 
 ```
 
-```
-## `summarise()` ungrouping output (override with `.groups` argument)
-```
-
 ```r
 gapminder2 %>% 
   ggplot(aes(x=year,y=mean_life_expectancy))+ geom_point()+  labs(title = "Global Life Expectancy beteween 1952 and 2007", x = "Year",y="Global Average Life Expectancy") + theme(axis.text.x = element_text(angle = 60, hjust = 1))
@@ -172,13 +168,9 @@ gapminder %>%
 ```
 
 ```
-## `summarise()` ungrouping output (override with `.groups` argument)
-```
-
-```
 ## # A tibble: 5 x 4
 ##   continent life_exp_min life_exp_mean life_exp_max
-##   <fct>            <dbl>         <dbl>        <dbl>
+## * <fct>            <dbl>         <dbl>        <dbl>
 ## 1 Africa            23.6          48.9         76.4
 ## 2 Americas          37.6          64.7         80.7
 ## 3 Asia              28.8          60.1         82.6
@@ -206,7 +198,7 @@ gapminder %>%
 ```
 
 ```
-## `summarise()` regrouping output by 'year' (override with `.groups` argument)
+## `summarise()` has grouped output by 'year'. You can override using the `.groups` argument.
 ```
 
 ![](lab11_hw_files/figure-html/unnamed-chunk-14-1.png)<!-- -->
