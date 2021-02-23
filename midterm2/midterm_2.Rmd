@@ -3,9 +3,9 @@ title: "Midterm 2"
 author: "Zabrisky Roland"
 date: "`r Sys.Date()`"
 output:
-  html_document:
+  html_document: 
     theme: spacelab
-    toc: no
+    keep_md: yes
 ---
 
 ```{r setup, include=FALSE}
