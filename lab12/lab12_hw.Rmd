@@ -40,6 +40,10 @@ grizzly <- read_csv(here("lab12", "data", "bear-sightings.csv")) %>% clean_names
 ```{r}
 summary(grizzly)
 ```
+<style>
+div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px;}
+</style>
+<div class = "blue">
 
 2. Use the range of the latitude and longitude to build an appropriate bounding box for your map.
 ```{r}
@@ -47,6 +51,7 @@ lat <- c(55.02, 60.37)
 long <- c(-166.2, -131.3)
 base_map_box <- make_bbox(long, lat, f = 0.05)
 ```
+</div>
 
 3. Load a map from `stamen` in a terrain style projection and display the map.
 ```{r}
