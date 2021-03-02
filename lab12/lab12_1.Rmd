@@ -247,15 +247,14 @@ write.csv(spiders_with_locs, file = "spiders_with_locs.csv", row.names = FALSE)
 It will be very helpful if you can install the following packages before the next lab. Please install them in order!
 `devtools` and `ggmap`
 ```{r}
-install.packages("devtools", repos=c("http://rstudio.org/_packages",
-"http://cran.rstudio.com",dependencies=TRUE))
 library(devtools)
 devtools::install_github("dkahle/ggmap")
 ```
 
 `rgeos`, `rgdal`, and `albersusa`
 ```{r, message = FALSE}
-install.packages("albersusa")
+devtools::install_github("hrbrmstr/albersusa")
+
 ```
 
 ## That's it! Take a break and I will see you on Zoom!  
