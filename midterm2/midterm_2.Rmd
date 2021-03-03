@@ -131,6 +131,10 @@ life_expectancy %>%
 
 ```
 
+<style>
+div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px;}
+</style>
+<div class = "blue">
 5. (3 points) Make a plot that shows the change over the past 100 years for the country with the biggest improvement in life expectancy. Be sure to add appropriate aesthetics to make the plot clean and clear. Once you have made the plot, do a little internet searching and see if you can discover what historical event may have contributed to this remarkable change.  
 
 ```{r}
@@ -144,6 +148,7 @@ life_expectancy_tidy %>%
    scale_x_discrete(breaks=c(1920,1930,1940,1950,1960,1970,1980,1990,2000,2010,2020))
   
 ```
+</div>
 
 ## Population Growth
 6. (3 points) Which 5 countries have had the highest population growth over the past 100 years (1920-2020)?
@@ -171,7 +176,10 @@ population_tidy %>%
   scale_x_discrete(breaks=c(1920,1930,1940,1950,1960,1970,1980,1990,2000,2010,2020))+
   theme(axis.text.x = element_text(angle = 60, hjust = 1), plot.title = element_text(size = rel(1.5), hjust = 0.5))
 ```
-
+<style>
+div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px;}
+</style>
+<div class = "blue">
 ## Income
 The units used for income are gross domestic product per person adjusted for differences in purchasing power in international dollars.
 
@@ -196,7 +204,7 @@ income_tidy %>%
   theme(axis.text.x = element_text(angle = 60, hjust = 1), plot.title = element_text(size = rel(1.5), hjust = 0.5))+
   scale_x_discrete(breaks=c(1920,1930,1940,1950,1960,1970,1980,1990,2000,2010,2020))
 ```
-
+</div>
 
 9. (3 points) Create three new objects that restrict each data set (life expectancy, population, income) to the years 1920-2020. Hint: I suggest doing this with the long form of your data. Once this is done, merge all three data sets using the code I provide below. You may need to adjust the code depending on how you have named your objects. I called mine `life_expectancy_100`, `population_100`, and `income_100`. For some of you, learning these `joins` will be important for your project.  
 
@@ -234,3 +242,5 @@ gapminder_join %>%
   labs(title = "The Relationship Between Income and Life Expectancy in 2020", x = "Log of GDP Per Person", y= "Life Expectancy (years)")+
   theme(axis.text.x = element_text(angle = 0, hjust = 0), plot.title = element_text(size = rel(1.5), hjust = 0.5))
 ```
+
+Your exam is awesome and looks great! You missed two points because you didn't finish the questions. You made the plots but didn't try to figure out what caused these things.
